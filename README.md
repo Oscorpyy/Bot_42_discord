@@ -286,4 +286,4 @@ This project is part of the 42 school ecosystem. Feel free to use and modify it 
 
 ---
 
-> Made with ❤️ for the 42 community
+> Made by opernod with ❤️ for the 42 community
