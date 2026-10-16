@@ -17,7 +17,7 @@ CAMPUS_ID: int = int(os.getenv("CAMPUS_ID", "9"))
 LOG_CHANNEL_ID: int = int(os.getenv("LOG_CHANNEL_ID", "1501554049688932452"))
 
 WHITELIST: Set[str] = {
-    "opernod", "lgoderne", "zqian", "cobussie", "crappo", "drafin"
+    "opernod", "lgoderne", "zqian", "cobussie", "crappo", "drafin", "aluslu"
 }
 BLACKLIST: Set[str] = set()
 
