@@ -176,40 +176,52 @@ The bot will start inside a detached `screen` session named `bot42`.
 
 ## 💬 Slash Commands
 
-### `/where`
+### `/where [nom]`
 
-Displays the current location of all users in your personal whitelist (or the global default whitelist if you haven't set one).
+Affiche l'emplacement actuel de tous les utilisateurs d'une whitelist personnelle (par défaut : `default`).
+
+- `/where` : affiche la whitelist `default` (ou la whitelist globale par défaut si aucune personnalisation).
+- `/where nom: transcendance` : affiche la whitelist spécifique `transcendance`.
+- Si le nom fourni n'existe pas, le bot renvoie une erreur et liste les whitelists connues pour votre compte.
 
 ```
+📍 Whitelist : transcendance (3 membres)
 ✅ opernod : e1r3p5
 ✅ lgoderne : e1r2p8
 🪐 zqian : Knowhere
 ```
 
-- ✅ = currently logged in, with their workstation host
-- 🪐 = not currently on campus
+- ✅ = connecté sur un poste (avec nom de machine)
+- 🪐 = hors campus / non connecté
 
 ### `/whereis <login>`
 
-Look up the location of a specific 42 login.
+Recherche l'emplacement d'un login spécifique de 42.
 
 ```
 /whereis opernod
 → ✅ opernod : e1r3p5
 ```
 
-### `/whitelist <logins>`
+### `/whitelist [nom] [logins]`
 
-Set a custom personal whitelist for your Discord account. Provide a comma or space-separated list of logins.
+Gère vos whitelists personnelles. Chaque utilisateur Discord possède ses propres whitelists.
 
-```
-/whitelist opernod, lgoderne, zqian
-→ ✅ Whitelist updated: lgoderne, opernod, zqian
-```
+- **Consulter une whitelist** :
+  - `/whitelist` : affiche le contenu de votre whitelist `default` ainsi que la liste de toutes vos whitelists.
+  - `/whitelist nom: transcendance` : affiche le contenu de la whitelist `transcendance`.
+- **Créer ou modifier une whitelist** :
+  - `/whitelist logins: opernod, lgoderne` : met à jour votre whitelist `default`.
+  - `/whitelist nom: transcendance logins: opernod, lgoderne` : crée ou met à jour la whitelist `transcendance`.
+- **Réinitialiser ou supprimer** :
+  - `/whitelist nom: default logins: reset` : réinitialise la whitelist `default` à la liste par défaut du campus.
+  - `/whitelist nom: transcendance logins: reset` : supprime la whitelist `transcendance`.
 
-To reset to the global default whitelist, send an empty or invalid list.
+### `/help`
 
-> **Note:** All command responses are **ephemeral** — only you can see the reply.
+Affiche un guide complet et interactif de toutes les fonctionnalités et commandes disponibles pour les utilisateurs.
+
+> **Note:** Toutes les réponses aux commandes sont **éphémères** (seul vous pouvez les voir). Les whitelists sont automatiquement sauvegardées de manière persistante.
 
 ---
 
